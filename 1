@@ -1,4 +1,16 @@
 {
+    "burstObservatory": {
+        "pingConfig": {
+            "connectivity": "",
+            "destination": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "sampling": 1,
+            "timeout": "3s"
+        },
+        "subjectSelector": [
+            "proxy"
+        ]
+    },
     "dns": {
         "queryStrategy": "UseIPv4",
         "servers": [
@@ -56,7 +68,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "51.250.27.109",
+                        "address": "185.68.244.101",
                         "port": 2053,
                         "users": [
                             {
@@ -83,113 +95,11 @@
             "tag": "proxy"
         },
         {
-            "protocol": "freedom",
-            "tag": "direct"
-        }
-    ],
-    "remarks": "🇷🇺  🇷🇺 Обход белых списков [1]",
-    "routing": {
-        "domainMatcher": "hybrid",
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "domain": [
-                    "domain:ru",
-                    "domain:su",
-                    "domain:yandex.com",
-                    "domain:yandex.net",
-                    "domain:mail.ru",
-                    "domain:vk.com",
-                    "domain:max.ru",
-                    "domain:2gis.ru",
-                    "domain:2gis.com"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "geosite:private"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "outboundTag": "direct",
-                "protocol": [
-                    "bittorrent"
-                ],
-                "type": "field"
-            }
-        ]
-    }
-}
-{
-    "dns": {
-        "queryStrategy": "UseIPv4",
-        "servers": [
-            {
-                "address": "1.1.1.1",
-                "domains": [
-                ],
-                "port": 53
-            }
-        ]
-    },
-    "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "socks"
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "allowTransparent": false
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "http"
-        }
-    ],
-    "meta": null,
-    "outbounds": [
-        {
             "protocol": "vless",
             "settings": {
                 "vnext": [
                     {
-                        "address": "158.160.113.155",
+                        "address": "185.23.19.228",
                         "port": 2053,
                         "users": [
                             {
@@ -213,117 +123,15 @@
                 "tcpSettings": {
                 }
             },
-            "tag": "proxy"
+            "tag": "proxy-2"
         },
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        }
-    ],
-    "remarks": "🇷🇺  🇷🇺 Обход белых списков [2]",
-    "routing": {
-        "domainMatcher": "hybrid",
-        "domainStrategy": "IPIfNonMatch",
-        "rules": [
-            {
-                "domain": [
-                    "domain:ru",
-                    "domain:su",
-                    "domain:yandex.com",
-                    "domain:yandex.net",
-                    "domain:mail.ru",
-                    "domain:vk.com",
-                    "domain:max.ru",
-                    "domain:2gis.ru",
-                    "domain:2gis.com"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "domain": [
-                    "geosite:private"
-                ],
-                "outboundTag": "direct",
-                "type": "field"
-            },
-            {
-                "outboundTag": "direct",
-                "protocol": [
-                    "bittorrent"
-                ],
-                "type": "field"
-            }
-        ]
-    }
-}
-{
-    "dns": {
-        "queryStrategy": "UseIPv4",
-        "servers": [
-            {
-                "address": "1.1.1.1",
-                "domains": [
-                ],
-                "port": 53
-            }
-        ]
-    },
-    "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": 10808,
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "socks"
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 10809,
-            "protocol": "http",
-            "settings": {
-                "allowTransparent": false
-            },
-            "sniffing": {
-                "destOverride": [
-                    "http",
-                    "tls",
-                    "quic"
-                ],
-                "enabled": true,
-                "routeOnly": false
-            },
-            "tag": "http"
-        }
-    ],
-    "meta": null,
-    "outbounds": [
         {
             "protocol": "vless",
             "settings": {
                 "vnext": [
                     {
-                        "address": "51.250.74.215",
-                        "port": 1443,
+                        "address": "185.23.19.229",
+                        "port": 2053,
                         "users": [
                             {
                                 "encryption": "none",
@@ -338,22 +146,326 @@
                 "network": "tcp",
                 "realitySettings": {
                     "fingerprint": "chrome",
-                    "publicKey": "h8BDQnylBOkY67mfYEWv47OtXIo8FOjL5Y1tlozo8D0",
-                    "serverName": "google.com"
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
                 },
                 "security": "reality",
                 "tcpSettings": {
                 }
             },
-            "tag": "proxy"
+            "tag": "proxy-3"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "144.31.158.20",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-4"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "2.27.12.69",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-5"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "138.124.126.47",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-6"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "2.26.54.78",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-7"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "109.120.184.157",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-8"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "77.110.121.154",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-9"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "2.27.23.216",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-10"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "95.181.173.106",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-11"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "178.215.239.223",
+                        "port": 2053,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "c4f67287-7e26-4d21-921d-68325b893148"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "rR-VrakwXWCU1MZu34xI1g-LBK7Ux7kLLrj9LMYJiwQ",
+                    "serverName": "sun6-21.userapi.com",
+                    "shortId": "a1b2c3d4"
+                },
+                "security": "reality",
+                "tcpSettings": {
+                }
+            },
+            "tag": "proxy-12"
         },
         {
             "protocol": "freedom",
             "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
         }
     ],
-    "remarks": "🇸🇪 Обход белых списков [3]",
+    "remarks": "🇪🇺 Автовыбор сервера ⚡",
     "routing": {
+        "balancers": [
+            {
+                "fallbackTag": "direct",
+                "selector": [
+                    "proxy"
+                ],
+                "strategy": {
+                    "settings": {
+                        "baselines": [
+                            "1s"
+                        ],
+                        "expected": 2,
+                        "maxRTT": "1s",
+                        "tolerance": 0.01
+                    },
+                    "type": "leastLoad"
+                },
+                "tag": "Super_Balancer"
+            }
+        ],
         "domainMatcher": "hybrid",
         "domainStrategy": "IPIfNonMatch",
         "rules": [
@@ -391,6 +503,11 @@
                 "protocol": [
                     "bittorrent"
                 ],
+                "type": "field"
+            },
+            {
+                "balancerTag": "Super_Balancer",
+                "network": "tcp,udp",
                 "type": "field"
             }
         ]
